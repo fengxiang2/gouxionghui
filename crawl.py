@@ -7,13 +7,13 @@ from urllib.parse import quote
 
 
 class Spider(object):
-    def __init__(self):
+    def __init__(self,file):
         self.keywords = []
         self.headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
         self.base_url = 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd={}'
         self.length = 0
         self.l = []
-        self.file = '鲜花礼品.csv'
+        self.file = file
         self.output_file = 'result.csv'
         
         
@@ -117,6 +117,7 @@ class Spider(object):
         
         
 if __name__ == "__main__":
-    sp = Spider()
+    file = 'kwd.csv'
+    sp = Spider(file)
     sp.run()
     
